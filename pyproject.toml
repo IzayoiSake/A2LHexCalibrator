@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "a2l-hex-calibrator"
+version = "1.2.0"
+description = "依据 A2L 描述安全编辑 Intel HEX 标定参数的离线工具"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.gui-scripts]
+a2l-hex-calibrator = "a2l_hex_calibrator.main:main"
+
+[project.optional-dependencies]
+dev = ["black>=24", "pyinstaller>=6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+a2l_hex_calibrator = ["locales/*.json"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
